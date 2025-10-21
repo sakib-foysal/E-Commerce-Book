@@ -181,8 +181,8 @@
                 <button onclick="toggleSidebar()">✖</button>
             </div>
             <ul class="p-4 space-y-3 text-gray-700">
-                <li><a href="#" class="hover:text-purple-700">হোম</a></li>
-                <li><a href="#" class="hover:text-purple-700">ক্যাটাগরিস</a></li>
+                <li><a href="/" class="hover:text-purple-700">হোম</a></li>
+                <li><a href="/categories" class="hover:text-purple-700">ক্যাটাগরিস</a></li>
                 <li><a href="#" class="hover:text-purple-700">লেখক</a></li>
                 <li><a href="#" class="hover:text-purple-700">প্রকাশনী</a></li>
                 <li><a href="#" class="hover:text-purple-700">স্টেশনারিস</a></li>

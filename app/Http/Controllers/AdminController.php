@@ -6,10 +6,31 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Image;
+use App\Models\Order;
+use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
+
+    public function dashboard()
+    {
+        $totalOrders = Order::count();
+        $totalProducts = Product::count();
+        $totalCategories = Category::count();
+        $totalUsers = User::count();
+        $recentOrders = Order::with('user')->latest()->take(5)->get();
+        $recentProducts = Product::latest()->take(5)->get();
+
+        return view('admin.dashboard', compact(
+            'totalOrders',
+            'totalProducts',
+            'totalCategories',
+            'totalUsers',
+            'recentOrders',
+            'recentProducts'
+        ));
+    }
     // ---------- PRODUCT SECTION ----------
     public function addProduct()
     {
